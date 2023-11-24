@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Fira Sans", sans-serif;
+}
+
+img {
+  object-fit: cover;
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner::after,
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.banner::after {
+  background: linear-gradient(
+    90deg,
+    #000,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(32, 33, 37, 0) 60%,
+    rgba(32, 33, 37, 0) 80%,
+    #000
+  );
+}
+
+.banner::before {
+  background: linear-gradient(0deg, #000, rgba(32, 33, 37, 0) 50%, #000);
+}
+
+.is-sticky {
+  background-color: #222;
+}
+
+.opacity-animation {
+  animation: fadeIn ease-in-out 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+}
+
+.skeleton {
+  animation: skeleton 1s linear infinite alternate;
+}
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
